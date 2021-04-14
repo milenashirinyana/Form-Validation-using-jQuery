@@ -1,0 +1,53 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        *{margin:0px}
+        .div{margin:35px}
+        .btn{padding: 15px;font-size: 18px;border:1px solid #ffcc00;border-radius: 19px;background: #ffcc00;color: #fff;transition: 0.4s;}
+        .btn:hover{cursor:pointer;background: #fff;color:#ffcc00;border:1px solid #ffcc00}
+        .fon{background: rgba(0,0,0,0.5);width:100%;height:100%;position:fixed;left:0;top:0}
+        .space{width:35%;height:90%;background: #333;border-radius:8px;margin: 0 auto;}
+        .space2{padding:53px;text-align: center;}
+        .input{border: none;height: 49px;border-radius: 5px;font-size: 14px;width: 290px;font-weight: bold;margin-top: 11px;}
+        h2{color:#fff;padding-bottom: 25px;}
+        .close{padding-left: 250px;font-size:35px;color: #f1f1f1;} .close:hover{cursor:pointer}
+        .btn_2{padding: 11px;font-size: 15px;border:1px solid #ffcc00;border-radius: 5px;background: #ffcc00;color: #fff;transition: 0.4s;width: 290px;
+         margin-top: 10px;}
+         .btn_2:hover{cursor:pointer;background: #fff;color:#ffcc00;border:1px solid #ffcc00}
+    </style>
+    </head>
+    <body>
+    <div class="div">
+        <button class="btn" onclick="btn1()">Click Here</button>
+    </div>
+    <div id="nav" class="fon">
+        <i class="fa fa-close close" onclick="pakel()"></i>
+        <div class="space">
+            <div class="space2">
+                <h2>Request A Quote</h2>
+                <input class="input" type="text" placeholder="Name"/>
+                <input class="input" type="text" placeholder="Email"/>
+                <input class="input" type="text" id="phone" placeholder="+7(000)000-00-00"/>
+                <button class="btn_2">Send</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/imask"></script>
+    <script>
+        document.getElementById("nav").style.display="none"
+        function btn1(){
+            document.getElementById("nav").style.display="block"
+        }
+        function pakel(){
+            document.getElementById("nav").style.display="none"
+        }
+        var element = document.getElementById('phone');
+        var maskOptions = {
+            mask: '+{7}(000)000-00-00'
+        };
+        var mask = IMask(element, maskOptions);
+    </script>
+    </body>
+</html>
