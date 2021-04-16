@@ -1,11 +1,9 @@
 <html>
     <head>
-        <script
-        src="https://code.jquery.com/jquery-3.4.1.js"
-        integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
-        crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.js"></script>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="http://getbootstrap.com/assets/js/ie10-viewport-bug-workaround.js"></script>
+    <script src="js/jquery.maskedinput.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <style>
         *{margin:0px}
         .div{margin:35px;display: flex;justify-content: center;}
@@ -36,13 +34,11 @@
             <div class="space2">
                 <h2>Введите ваши данные,мы вам перезвоним</h2>
                 <input class="input" type="text" placeholder="Имя"/>
-                <input  class="js-phone-field" type="tel" name="phone" id="phoneInput" placeholder="+7 (999) 999-99-99">
+                <input  class="js-phone-field" type="tel" id="phone" placeholder="+7 (999) 999-99-99">
                 <button class="btn_2">отправить</button>
             </div>
         </div>
     </div>
-
-    <script src="https://unpkg.com/imask"></script>
     <script>
         document.getElementById("nav").style.display="none"
         function btn1(){
@@ -51,15 +47,9 @@
         function pakel(){
             document.getElementById("nav").style.display="none"
         }
-        $(function(){
-        $('.js-phone-field').on('input', function () {
-            let val = $('.js-phone-field').val();
-            if (val[0] == 8 || val[0] == 7){
-                $('.js-phone-field').val(val.slice(1));
-            }
-        });
-        $('.js-phone-field').mask('+7 (999) 999-99-99');
-    });
+        $(document).ready(function(){
+            $("#phone").mask("+7(999) 999-99-99");
+        })
     </script>
     </body>
 </html>
